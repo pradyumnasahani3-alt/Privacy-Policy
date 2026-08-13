@@ -5,130 +5,358 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Word Discovery</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 48px 24px 96px;
-    line-height: 1.6;
-    color: #1f2430;
-    background: #fff;
+  :root {
+    color-scheme: light dark;
+    --purple: #7B5CFA;
+    --purple-dark: #5B3FDC;
+    --blue: #4FC3F7;
+    --gold: #FFC94A;
+    --orange: #FF9A56;
+    --mint: #2FD9A8;
+    --ink: #1f2430;
+    --sub: #5b6270;
+    --bg: #f5f4fb;
+    --card: #ffffff;
+    --border: #ece9fb;
   }
   @media (prefers-color-scheme: dark) {
-    body { color: #e7e9ee; background: #14161c; }
-    a { color: #7fb0ff; }
-    hr { border-color: #2b2f3a; }
+    :root {
+      --ink: #eef0f7;
+      --sub: #a7acbb;
+      --bg: #12121a;
+      --card: #1b1c27;
+      --border: #2a2b3a;
+    }
   }
-  h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
-  .updated { color: #6b7280; font-size: 0.9rem; margin-bottom: 2rem; }
-  h2 { font-size: 1.25rem; margin-top: 2.25rem; }
-  ul { padding-left: 1.25rem; }
-  li { margin-bottom: 0.4rem; }
-  a { color: #4f46e5; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #e5e7eb; font-size: 0.95rem; }
-  @media (prefers-color-scheme: dark) { th, td { border-color: #2b2f3a; } }
-  th { color: #6b7280; font-weight: 600; }
-  code { background: rgba(127,127,127,0.15); padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(700px 380px at 8% -8%, rgba(123,92,250,0.16), transparent 60%),
+      radial-gradient(600px 340px at 108% 8%, rgba(79,195,247,0.16), transparent 60%),
+      var(--bg);
+    line-height: 1.65;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 64px 24px 56px;
+    text-align: center;
+    background: linear-gradient(120deg, var(--purple) 0%, #6C7CF0 45%, var(--blue) 100%);
+    color: #fff;
+  }
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(2px);
+    opacity: 0.35;
+  }
+  .hero::before {
+    width: 220px; height: 220px;
+    background: var(--gold);
+    top: -80px; left: -60px;
+  }
+  .hero::after {
+    width: 260px; height: 260px;
+    background: var(--mint);
+    bottom: -110px; right: -70px;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(6px);
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 20px 0 6px;
+    font-weight: 800;
+  }
+  .hero p.tagline {
+    margin: 0;
+    opacity: 0.92;
+    font-size: 1.05rem;
+  }
+  .hero .updated {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  main {
+    max-width: 820px;
+    margin: -32px auto 0;
+    padding: 0 20px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 28px;
+    box-shadow: 0 16px 40px rgba(76, 60, 160, 0.12);
+    margin-bottom: 32px;
+  }
+  .summary-card p { margin: 0; color: var(--sub); font-size: 1.02rem; }
+  .summary-card strong { color: var(--ink); }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(76, 60, 160, 0.06);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .icon {
+    flex: none;
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+    color: #fff;
+  }
+  .section h2 { margin: 0; font-size: 1.18rem; font-weight: 750; }
+
+  .icon.i-lock   { background: linear-gradient(135deg, var(--purple), var(--purple-dark)); }
+  .icon.i-device { background: linear-gradient(135deg, var(--blue), #2E9CDB); }
+  .icon.i-ad     { background: linear-gradient(135deg, var(--gold), var(--orange)); }
+  .icon.i-perm   { background: linear-gradient(135deg, var(--mint), #16B08A); }
+  .icon.i-kid    { background: linear-gradient(135deg, #FF7CA3, #FF5C8A); }
+  .icon.i-share  { background: linear-gradient(135deg, #8C7CF0, var(--purple)); }
+  .icon.i-choice { background: linear-gradient(135deg, var(--blue), var(--mint)); }
+  .icon.i-change { background: linear-gradient(135deg, var(--orange), #FF7A59); }
+  .icon.i-mail   { background: linear-gradient(135deg, var(--purple), var(--blue)); }
+
+  ul { padding-left: 1.2rem; margin: 0.5rem 0; }
+  li { margin-bottom: 0.45rem; }
+  p { margin: 0.6rem 0; }
+  a { color: var(--purple); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: currentColor; }
+  @media (prefers-color-scheme: dark) { a { color: #b7a7ff; } }
+
+  .pill-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: 8px;
+  }
+  .pill-table td {
+    background: var(--bg);
+    padding: 10px 14px;
+    font-size: 0.92rem;
+  }
+  .pill-table tr td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: var(--purple);
+    white-space: nowrap;
+  }
+  @media (prefers-color-scheme: dark) { .pill-table tr td:first-child { color: #b7a7ff; } }
+  .pill-table tr td:last-child {
+    border-radius: 0 10px 10px 0;
+    color: var(--sub);
+  }
+
+  code {
+    background: rgba(123,92,250,0.12);
+    color: var(--purple);
+    padding: 0.15em 0.5em;
+    border-radius: 6px;
+    font-size: 0.88em;
+    font-weight: 600;
+  }
+  @media (prefers-color-scheme: dark) { code { color: #cabdff; background: rgba(123,92,250,0.22); } }
+
+  .link-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin: 4px 8px 4px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .contact-card {
+    background: linear-gradient(120deg, var(--purple), var(--blue));
+    color: #fff;
+    border-radius: 18px;
+    padding: 28px;
+    text-align: center;
+    margin-top: 28px;
+  }
+  .contact-card h2 { margin: 0 0 8px; font-size: 1.2rem; }
+  .contact-card a {
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-top: 10px;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .contact-card a:hover { background: rgba(255,255,255,0.3); }
+
+  footer {
+    text-align: center;
+    color: var(--sub);
+    font-size: 0.82rem;
+    margin-top: 36px;
+  }
 </style>
 </head>
 <body>
 
-<h1>Privacy Policy — Word Discovery</h1>
-<p class="updated">Effective date: August 13, 2026</p>
+<div class="hero">
+  <div class="hero-inner">
+    <span class="badge">🔒 Privacy Policy</span>
+    <h1>Word Discovery</h1>
+    <p class="tagline">Find Words. Unlock Worlds.</p>
+    <p class="updated">Effective date: August 13, 2026</p>
+  </div>
+</div>
 
-<p>
-  This Privacy Policy explains how <strong>Word Discovery</strong> ("the app", "we", "us") handles
-  information when you use the app. Word Discovery is developed and published by Pradyumna Sahani.
-</p>
+<main>
 
-<h2>Summary</h2>
-<p>
-  Word Discovery does not require you to create an account and does not directly collect your name,
-  email address, or other personal information. Your puzzle progress, coins, hints, and achievements
-  are stored locally on your device. The app shows ads served by Google AdMob, which independently
-  collects some device and advertising data as described below.
-</p>
+  <div class="summary-card">
+    <p>
+      🧩 <strong>The short version:</strong> Word Discovery doesn't require an account and doesn't
+      collect your name or email. Your puzzle progress, coins, and achievements stay on your device.
+      The app shows ads via Google AdMob, which independently collects some device/advertising data
+      to serve those ads — details below.
+    </p>
+  </div>
 
-<h2>Information stored on your device</h2>
-<p>The app stores the following locally, using Android's local database storage. This data is never sent to us or any server we operate:</p>
-<ul>
-  <li>Puzzle progress, completed levels, and stars earned</li>
-  <li>Coins, hint tokens, and lives balance</li>
-  <li>Achievements and your discovered-word collection</li>
-  <li>Daily Challenge streak</li>
-</ul>
-<p>
-  This data stays on your device and is removed if you uninstall the app or clear its storage from
-  Android's App Info settings. If Android's standard device backup is enabled on your phone, this
-  data may be included in your own Google Account backup, managed entirely by Android/Google — we do
-  not have access to it.
-</p>
+  <div class="section">
+    <div class="section-head">
+      <span class="icon i-device">📱</span>
+      <h2>What's stored on your device</h2>
+    </div>
+    <p>Saved locally, never sent to us or any server we operate:</p>
+    <ul>
+      <li>Puzzle progress, completed levels, and stars earned</li>
+      <li>Coins, hint tokens, and lives balance</li>
+      <li>Achievements and your discovered-word collection</li>
+      <li>Daily Challenge streak</li>
+    </ul>
+    <p>
+      This clears if you uninstall the app or wipe its storage from Android's App Info settings.
+      If your phone's standard Android backup is on, this data may ride along in your own Google
+      Account backup — that's managed entirely by Android/Google, not by us.
+    </p>
+  </div>
 
-<h2>Advertising (Google AdMob)</h2>
-<p>
-  The app shows banner ads and optional rewarded ads (e.g., to earn extra hints) using
-  <strong>Google AdMob</strong>. To deliver and measure ads, Google Mobile Ads SDK may collect and
-  process information such as your advertising ID, IP address, device and app information, and ad
-  interaction data. Google acts as an independent data controller for this processing.
-</p>
-<p>
-  You can review how Google handles this data, and manage your ad personalization settings, here:
-</p>
-<ul>
-  <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-  <li><a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a> — opt out of personalized ads</li>
-  <li><a href="https://support.google.com/googleplay/answer/6220101" target="_blank" rel="noopener">How Google uses information from apps that use Google services</a></li>
-</ul>
+  <div class="section">
+    <div class="section-head">
+      <span class="icon i-ad">🎯</span>
+      <h2>Advertising (Google AdMob)</h2>
+    </div>
+    <p>
+      The app shows banner ads and optional rewarded ads (e.g., to earn extra hints) using
+      <strong>Google AdMob</strong>. To deliver and measure ads, the Google Mobile Ads SDK may collect
+      your advertising ID, IP address, device/app info, and ad interaction data. Google acts as an
+      independent data controller for this processing.
+    </p>
+    <div>
+      <a class="link-chip" href="https://policies.google.com/privacy" target="_blank" rel="noopener">🔗 Google Privacy Policy</a>
+      <a class="link-chip" href="https://adssettings.google.com" target="_blank" rel="noopener">⚙️ Google Ads Settings</a>
+      <a class="link-chip" href="https://support.google.com/googleplay/answer/6220101" target="_blank" rel="noopener">📄 How Google uses app data</a>
+    </div>
+  </div>
 
-<h2>Permissions the app requests</h2>
-<table>
-  <tr><th>Permission</th><th>Why</th></tr>
-  <tr><td><code>INTERNET</code></td><td>Required to load banner and rewarded ads</td></tr>
-  <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Lets the ad SDK check connectivity before requesting an ad</td></tr>
-  <tr><td><code>VIBRATE</code></td><td>Haptic feedback when you find a word or complete a level — no data is collected</td></tr>
-</table>
-<p>
-  The app does not request access to your location, contacts, camera, microphone, photos, or files.
-</p>
+  <div class="section">
+    <div class="section-head">
+      <span class="icon i-perm">🔑</span>
+      <h2>Permissions the app requests</h2>
+    </div>
+    <table class="pill-table">
+      <tr><td><code>INTERNET</code></td><td>Required to load banner and rewarded ads</td></tr>
+      <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Lets the ad SDK check connectivity before requesting an ad</td></tr>
+      <tr><td><code>VIBRATE</code></td><td>Haptic feedback when you find a word or finish a level — collects no data</td></tr>
+    </table>
+    <p style="margin-top:14px;">No access to your location, contacts, camera, microphone, photos, or files.</p>
+  </div>
 
-<h2>Children's privacy</h2>
-<p>
-  Word Discovery is a general-audience word puzzle game and is not directed at children under 13.
-  We do not knowingly collect personal information from children. If you believe a child has provided
-  us with personal information, please contact us using the details below so we can address it.
-</p>
+  <div class="section">
+    <div class="section-head">
+      <span class="icon i-kid">🧒</span>
+      <h2>Children's privacy</h2>
+    </div>
+    <p>
+      Word Discovery is a general-audience word puzzle game and isn't directed at children under 13.
+      We don't knowingly collect personal information from children. If you believe a child has shared
+      personal information with us, contact us below so we can address it.
+    </p>
+  </div>
 
-<h2>Data sharing</h2>
-<p>
-  We do not sell your information. Aside from the AdMob ad-serving data described above, we do not
-  share any data with third parties, because we do not collect any data on our own servers — the app
-  currently has no backend server or account system.
-</p>
+  <div class="section">
+    <div class="section-head">
+      <span class="icon i-share">🤝</span>
+      <h2>Data sharing</h2>
+    </div>
+    <p>
+      We don't sell your information. Aside from AdMob's ad-serving data above, we don't share data
+      with third parties — the app has no backend server or account system of its own.
+    </p>
+  </div>
 
-<h2>Your choices</h2>
-<ul>
-  <li>Uninstalling the app removes all locally stored progress data.</li>
-  <li>You can opt out of personalized advertising at any time via your device's Ad Settings
-      (Android Settings → Google → Ads → Opt out of Ads Personalization) or via
-      <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>.</li>
-</ul>
+  <div class="section">
+    <div class="section-head">
+      <span class="icon i-choice">✅</span>
+      <h2>Your choices</h2>
+    </div>
+    <ul>
+      <li>Uninstalling the app removes all locally stored progress data.</li>
+      <li>Opt out of personalized ads anytime via <em>Android Settings → Google → Ads → Opt out of Ads Personalization</em>, or at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>.</li>
+    </ul>
+  </div>
 
-<h2>Changes to this policy</h2>
-<p>
-  We may update this Privacy Policy as the app changes. Updates will be posted on this page with a
-  revised effective date. Continued use of the app after a change means you accept the updated policy.
-</p>
+  <div class="section">
+    <div class="section-head">
+      <span class="icon i-change">🔄</span>
+      <h2>Changes to this policy</h2>
+    </div>
+    <p>
+      We may update this Privacy Policy as the app evolves. Updates are posted on this page with a
+      revised effective date. Continuing to use the app after a change means you accept the update.
+    </p>
+  </div>
 
-<h2>Contact us</h2>
-<p>
-  Questions about this policy or your data? Contact:
-  <a href="mailto:pradyumna.sahani3@gmail.com">pradyumna.sahani3@gmail.com</a>
-</p>
+  <div class="contact-card">
+    <h2>✉️ Questions about this policy?</h2>
+    <p style="opacity:0.9; margin:0;">We're happy to help.</p>
+    <a href="mailto:pradyumna.sahani3@gmail.com">pradyumna.sahani3@gmail.com</a>
+  </div>
 
-<hr>
-<p style="color:#6b7280; font-size: 0.85rem;">Word Discovery · Privacy Policy · Hosted on GitHub Pages</p>
+  <footer>Word Discovery · Privacy Policy · Hosted on GitHub Pages</footer>
+
+</main>
 
 </body>
 </html>
