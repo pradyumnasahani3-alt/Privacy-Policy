@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — WordPop Kids</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f5fa;
+    --surface: #ffffff;
+    --surface-alt: #eeecf9;
+    --ink: #1f1b2e;
+    --ink-soft: #57516d;
+    --ink-faint: #8a84a3;
+    --accent: #e8632c;
+    --accent-ink: #ffffff;
+    --accent-2: #7457e0;
+    --border: #e1ddf1;
+    --shadow: 0 1px 2px rgba(31,27,46,0.04), 0 8px 24px rgba(31,27,46,0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171422;
+      --surface: #201c2e;
+      --surface-alt: #262138;
+      --ink: #f2effa;
+      --ink-soft: #beb8d9;
+      --ink-faint: #837da3;
+      --accent: #ff8a57;
+      --accent-ink: #1f1522;
+      --accent-2: #a58cff;
+      --border: #34304a;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .top-rule {
+    height: 6px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .mark {
+    width: 52px;
+    height: 52px;
+    flex: none;
+    border-radius: 16px;
+    background: linear-gradient(155deg, var(--accent), var(--accent-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Baloo 2", ui-rounded, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--accent-ink);
+    box-shadow: var(--shadow);
+  }
+
+  .masthead-text .app-name {
+    font-family: "Baloo 2", ui-rounded, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text .app-tag {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  h1.doc-title {
+    font-family: "Baloo 2", ui-rounded, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    line-height: 1.12;
+    text-wrap: balance;
+    margin: 36px 0 14px;
+    color: var(--ink);
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .meta-chip {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lede {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin-bottom: 40px;
+  }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 48px;
+  }
+
+  nav.toc h2 {
+    font-family: "Karla", sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.11em;
+    color: var(--ink-faint);
+    font-weight: 700;
+    margin: 0 0 14px;
+  }
+
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+  }
+
+  nav.toc li a {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 5px 0;
+    border-radius: 6px;
+  }
+
+  nav.toc li a .n {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--accent);
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+
+  nav.toc li a:hover,
+  nav.toc li a:focus-visible {
+    color: var(--accent-2);
+  }
+  nav.toc li a:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 3px;
+  }
+
+  section.doc-section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+
+  section.doc-section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    color: var(--ink);
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section.doc-section h2 .idx {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  section.doc-section h3 {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 20px 0 6px;
+  }
+
+  section.doc-section p,
+  section.doc-section li {
+    color: var(--ink-soft);
+    max-width: 66ch;
+  }
+
+  section.doc-section ul {
+    margin: 10px 0;
+    padding-left: 22px;
+  }
+
+  section.doc-section li {
+    margin-bottom: 6px;
+  }
+
+  section.doc-section li::marker {
+    color: var(--accent);
+  }
+
+  section.doc-section a {
+    color: var(--accent-2);
+    text-underline-offset: 2px;
+  }
+
+  section.doc-section a:hover { text-decoration-color: currentColor; }
+
+  code {
+    background: var(--surface-alt);
+    color: var(--accent-2);
+    padding: 0.15em 0.5em;
+    border-radius: 6px;
+    font-size: 0.88em;
+    font-weight: 600;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .callout {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+
+  .callout p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 15px;
+  }
+
+  .callout p + p { margin-top: 8px; }
+
+  table.perm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+
+  table.perm-table th,
+  table.perm-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-soft);
+  }
+
+  table.perm-table th {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+  }
+
+  table.perm-table td:first-child {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .table-wrap { overflow-x: auto; }
+
+  footer.contact-card {
+    margin-top: 56px;
+    background: linear-gradient(160deg, var(--surface-alt), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 28px 26px;
+    box-shadow: var(--shadow);
+  }
+
+  footer.contact-card h2 {
+    font-family: "Baloo 2", ui-rounded, system-ui, sans-serif;
+    font-size: 19px;
+    margin: 0 0 8px;
+  }
+
+  footer.contact-card p {
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    max-width: 56ch;
+  }
+
+  .contact-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14.5px;
+  }
+
+  .contact-line a {
+    color: var(--accent-2);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .contact-line a:hover { text-decoration: underline; }
+
+  .page-foot {
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 12.5px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 560px) {
+    nav.toc ol { grid-template-columns: 1fr; }
+    .page { padding: 40px 18px 72px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a { transition: color 0.15s ease; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark">W</div>
+    <div class="masthead-text">
+      <div class="app-name">WordPop Kids</div>
+      <div class="app-tag">Pop a card, learn a word!</div>
+    </div>
+  </header>
+
+  <h1 class="doc-title">Privacy Policy</h1>
+
+  <div class="meta-row">
+    <span class="meta-chip">Effective 2026-08-23</span>
+    <span class="meta-chip">Last updated 2026-08-23</span>
+    <span class="meta-chip">App version 1.0.0</span>
+  </div>
+
+  <p class="lede">WordPop Kids is a flashcard learning app built for young children. This page explains, in plain language, what information the app touches, what it never asks for, and how the small amount of advertising it shows is kept appropriate for kids.</p>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#overview"><span class="n">1</span>Overview</a></li>
+      <li><a href="#no-accounts"><span class="n">2</span>No accounts, no sign-in</a></li>
+      <li><a href="#local-data"><span class="n">3</span>What stays on the device</a></li>
+      <li><a href="#permissions"><span class="n">4</span>Permissions we use</a></li>
+      <li><a href="#advertising"><span class="n">5</span>Advertising</a></li>
+      <li><a href="#childrens-privacy"><span class="n">6</span>Children's privacy</a></li>
+      <li><a href="#parent-area"><span class="n">7</span>Parent area</a></li>
+      <li><a href="#data-deletion"><span class="n">8</span>Clearing your data</a></li>
+      <li><a href="#changes"><span class="n">9</span>Changes to this policy</a></li>
+      <li><a href="#contact"><span class="n">10</span>Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="doc-section" id="overview">
+    <h2><span class="idx">01</span>Overview</h2>
+    <p>WordPop Kids helps children learn new words through flashcards, scratch-and-reveal cards, and listen-and-choose games, organized into categories like animals, vehicles, shapes, and colors. The app is designed to work entirely on the device — there is no login, no chat, no user-generated content, and no way for a child to contact anyone through it.</p>
+    <p>This policy covers the WordPop Kids Android app (package <code>com.ktl.talky</code>) and applies to players of all ages, including children.</p>
+  </section>
+
+  <section class="doc-section" id="no-accounts">
+    <h2><span class="idx">02</span>No accounts, no sign-in</h2>
+    <p>WordPop Kids does not ask a child (or a parent) to create an account, sign in, or enter a name, email address, birthdate, photo, or any other personal detail. There are no forms to fill in anywhere in the app.</p>
+  </section>
+
+  <section class="doc-section" id="local-data">
+    <h2><span class="idx">03</span>What stays on the device</h2>
+    <p>To make the game work, WordPop Kids keeps a small amount of gameplay information in a local database on the device itself:</p>
+    <ul>
+      <li>Which words and levels have been completed, and star ratings earned</li>
+      <li>Coins and badges collected through play</li>
+      <li>App settings, such as sound and haptic preferences</li>
+    </ul>
+    <div class="callout">
+      <p>None of this leaves the device. It is never uploaded to a server, never linked to an identity, and is not accessible to us as the developer.</p>
+    </div>
+  </section>
+
+  <section class="doc-section" id="permissions">
+    <h2><span class="idx">04</span>Permissions we use</h2>
+    <p>The app requests a short, deliberate list of Android permissions:</p>
+    <div class="table-wrap">
+      <table class="perm-table">
+        <thead>
+          <tr><th>Permission</th><th>What it's for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>INTERNET</td><td>Loading the advertising shown between levels</td></tr>
+          <tr><td>ACCESS_NETWORK_STATE</td><td>Checking connectivity before requesting an ad</td></tr>
+          <tr><td>VIBRATE</td><td>Short haptic feedback on correct answers and rewards</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>WordPop Kids does not request camera, microphone, contacts, location, or storage access, and does not use the Android advertising ID — that permission is explicitly disabled in the app.</p>
+  </section>
+
+  <section class="doc-section" id="advertising">
+    <h2><span class="idx">05</span>Advertising</h2>
+    <p>The app shows a small number of ads — a banner, and occasional interstitial or rewarded video ads — served through <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AdMob</a>. These ads are configured to be treated as directed at children: no behavioral or interest-based targeting, and no use of the advertising identifier described above.</p>
+    <p>Google, as the ad-serving provider, may still process limited technical information (such as IP address and device type) to serve and measure ads, in accordance with its own <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">advertising policies</a>. We do not control or see this data ourselves.</p>
+  </section>
+
+  <section class="doc-section" id="childrens-privacy">
+    <h2><span class="idx">06</span>Children's privacy</h2>
+    <p>WordPop Kids is built with young children in mind, and we do not knowingly collect personal information from any user, child or adult. The app contains no chat, social features, external links a child could tap into unrelated content, or ways to share data outside the device.</p>
+    <p>If you believe a child has provided us with personal information through some means we haven't anticipated, contact us using the details below and we will remove it promptly.</p>
+  </section>
+
+  <section class="doc-section" id="parent-area">
+    <h2><span class="idx">07</span>Parent area</h2>
+    <p>The "Parents" section of the app — where progress and settings can be reviewed — sits behind a simple parental gate (a short task unlikely to be completed by a young child) so that it is a caregiver, not the child, who reaches those screens.</p>
+  </section>
+
+  <section class="doc-section" id="data-deletion">
+    <h2><span class="idx">08</span>Clearing your data</h2>
+    <p>Because all progress is stored locally, you are always in full control of it:</p>
+    <ul>
+      <li>Clear it any time via Android Settings → Apps → WordPop Kids → Storage & cache → Clear storage</li>
+      <li>Remove it entirely by uninstalling the app</li>
+    </ul>
+    <p>Neither action requires contacting us, since we never held a copy of this data in the first place.</p>
+  </section>
+
+  <section class="doc-section" id="changes">
+    <h2><span class="idx">09</span>Changes to this policy</h2>
+    <p>If this policy changes — for example, if a future update adds a new feature that touches data differently — we'll update the "Last updated" date at the top of this page and, for material changes, note it in the app's release notes.</p>
+  </section>
+
+  <section class="doc-section" id="contact">
+    <h2><span class="idx">10</span>Contact</h2>
+    <p>Questions about this policy or how WordPop Kids handles information are welcome any time.</p>
+  </section>
+
+  <footer class="contact-card">
+    <h2>Get in touch</h2>
+    <p>For privacy questions, data requests, or anything else about WordPop Kids, reach the developer directly.</p>
+    <div class="contact-line">
+      ✉️ <a href="mailto:pradyumna.sahani3@gmail.com">pradyumna.sahani3@gmail.com</a>
+    </div>
+  </footer>
+
+  <p class="page-foot">WordPop Kids · Privacy Policy · Hosted on GitHub Pages</p>
+
+</div>
+</body>
+</html>
